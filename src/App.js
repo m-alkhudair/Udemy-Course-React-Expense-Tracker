@@ -47,25 +47,25 @@ const App = () => {
   };
 
   //this is new by me
-  const filterExpenses = (yr) => {
-    // console.log("this is from APP", yr);
-    // console.log(expenses);
-    // for (let i = 0; i<expenses.length; i++) {
-    //   console.log(expenses[i].date.toDateString());
-    // }
-    console.log(expenses.filter((element) => element.date.toDateString().includes(yr)));
-    return expenses.filter((element) => element.date.toDateString().includes(yr));
-  };
+  // const filterExpenses = (yr) => {
+  //   // console.log("this is from APP", yr);
+  //   // console.log(expenses);
+  //   // for (let i = 0; i<expenses.length; i++) {
+  //   //   console.log(expenses[i].date.toDateString());
+  //   // }
+  //   console.log(expenses.filter((element) => element.date.toDateString().includes(yr)));
+  //   return expenses.filter((element) => element.date.toDateString().includes(yr));
+  // };
 
-  
+
 
 
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      {/* ADD props NEW filteredYearItem */}
-      <Expenses items={expenses} onFilterYr={filterExpenses} />
-      {/* last two props by me NEW */}
+
+      <Expenses items={expenses} />
+
     </div>
   );
 };

@@ -6,7 +6,7 @@ const ExpensesFilter = (props) => {
   const selectOnChangeHandler = (event) => {
     props.onSelection(event.target.value); //this was before we coverted the prop into an obj
     // console.log(event.target.value);
-    props.onFilteringYr();
+    // props.onFilteringYr();
 
     //Mine Might DELETE SOON
     // props.onFilterFunctions.selectYr(event.target.value);
