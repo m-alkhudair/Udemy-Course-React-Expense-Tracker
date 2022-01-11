@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import ExpenseItem from "./ExpenseItem";
+// import ExpenseItem from "./ExpenseItem"; //no longer needed
 import Card from "../UI/Card";
 import "./Expenses.css";
 import ExpensesFilter from "./ExpensesFilter";
+import ExpensesList from "./ExpensesList";
 
 const Expenses = (props) => {
   const [selectedYear, setSelectedYear] = useState("2020");
@@ -31,17 +32,18 @@ const Expenses = (props) => {
   // CONDITIONAL LOGIC FOR <ExpenseItem> OUTSIDE:
   // Note: we can store JSX content in variables and also return it out side the return statment.
   // Now we can add an (if statement)!
-  let expenseContent = <p>No Expense Found.</p> //this is the defau value
-  if (filteredExpenses.length > 0) {
-    expenseContent = filteredExpenses.map((expense) => (
-      <ExpenseItem
-        key={expense.id}
-        title={expense.title}
-        amount={expense.amount}
-        date={expense.date}
-      />
-    ))
-  }
+  // let expenseContent = <p>No Expense Found.</p> //this is the defau value
+  // if (filteredExpenses.length > 0) {
+  //   expenseContent = filteredExpenses.map((expense) => (
+  //     <ExpenseItem
+  //       key={expense.id}
+  //       title={expense.title}
+  //       amount={expense.amount}
+  //       date={expense.date}
+  //     />
+  //   ))
+  // }
+  // NEW BRACH (CONDITIONAL RETURNS) UPDATE: THIS LOGIC IS MOVED TO EXPENSESLIST.JS
 
   return (
     <Card className="expenses">
@@ -105,8 +107,10 @@ const Expenses = (props) => {
  */}
 
  {/* IN ITS PLACE WILL SIMPLY POINT TO THE VARIABLE ! */}
-    {expenseContent}
+    {/* {expenseContent} */}
+    {/* // NEW BRACH (CONDITIONAL RETURNS) UPDATE: THIS LOGIC IS MOVED TO EXPENSESLIST.JS */}
 
+    <ExpensesList items={filteredExpenses} />
 
       {/* Supposed to DELETE this at the bottom */}
       {/* <ExpenseItem
