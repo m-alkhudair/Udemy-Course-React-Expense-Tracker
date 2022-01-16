@@ -4,49 +4,49 @@ import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 
 const NewExpense = (props) => {
-  const saveExpenseDataHander = (enteredExpenseData) => {
-    const expenseData = {
-      ...enteredExpenseData,
-      id: Math.random().toString(),
-    };
+  // const saveExpenseDataHander = (enteredExpenseData) => {
+  //   const expenseData = {
+  //     ...enteredExpenseData,
+  //     id: Math.random().toString(),
+  //   };
 
-    props.onAddExpense(expenseData);
-  };
+  //   props.onAddExpense(expenseData);
+  // };
 
-  const showForm = (event) =>{
+  // const showForm = (event) =>{
     
-    if (event) {
-    event.preventDefault();
-    console.log(event);
+  //   if (event) {
+  //   event.preventDefault();
+  //   console.log(event);
 
   
-    const newExpenseFrom = <ExpenseForm onSaveExpenseData={saveExpenseDataHander} onCancel={hideForm}/>
-    setNewExpenseContent(newExpenseFrom);
-    console.log(newExpenseFrom);
-    }
+  //   const newExpenseFrom = <ExpenseForm onSaveExpenseData={saveExpenseDataHander} onCancel={hideForm}/>
+  //   setNewExpenseContent(newExpenseFrom);
+  //   console.log(newExpenseFrom);
+  //   }
     
-  }
+  // }
 
-  let newExpense = <button type="button" onClick={showForm}>Add a New Expense</button>
+  // let newExpense = <button type="button" onClick={showForm}>Add a New Expense</button>
 
-  const [newExpenseContent, setNewExpenseContent] = useState(newExpense)
+  // const [newExpenseContent, setNewExpenseContent] = useState(newExpense)
   
-  // to activate the cancel btn
+  // // to activate the cancel btn
 
-  const hideForm  = (event)=>{
-    if (event) {
-     console.log(event); 
+  // const hideForm  = (event)=>{
+  //   if (event) {
+  //    console.log(event); 
 
-     setNewExpenseContent(newExpense);
+  //    setNewExpenseContent(newExpense);
 
-    }
-  }
+  //   }
+  // }
  
 
   return (
     <div className="new-expense">
 
-     {newExpenseContent}
+     {/* {newExpenseContent} */}
       
     </div>
   );
