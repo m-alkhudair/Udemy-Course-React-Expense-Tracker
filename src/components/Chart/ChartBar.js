@@ -6,7 +6,7 @@ const ChartBar = (props) => {
 
     let barFillHeight = '0%';
 
-    if (props.max > 0) {
+    if (props.maxValue > 0) {
 
         // this format will convert it into a string, to use for styling
         barFillHeight = Math.round((props.value / props.maxValue) * 100) + '%'

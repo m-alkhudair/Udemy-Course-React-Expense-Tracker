@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 // import ExpenseItem from "./ExpenseItem"; //no longer needed
 import Card from "../UI/Card";
-import "./Expenses.css";
 import ExpensesFilter from "./ExpensesFilter";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
+import "./Expenses.css";
 
 const Expenses = (props) => {
   const [selectedYear, setSelectedYear] = useState("2020");
@@ -56,6 +57,8 @@ const Expenses = (props) => {
         // onFilteringYr={filterYr}
         // onFilterFunctions={filterFunctions}
       />
+
+      <ExpensesChart expenses={filteredExpenses} />
 
       {/* if you generate an array of components in JSX, React has the ability to render them */}
       {/* not that in the callback function we used parentheses instead of curly braces */}
